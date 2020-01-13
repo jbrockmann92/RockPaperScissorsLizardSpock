@@ -13,23 +13,11 @@ namespace RPSLS
         //I'll want a list of the 5 options in this class that will be assigned values ultimately in the Game class
         //Human and computer will inherit from the Player class
 
-        int whichGesture;
-        string rock;
-        string paper;
-        string scissors;
-        string lizard;
-        string spock;
-
-        public List<Gesture> gestures;
+        public List<Gesture> gestures = null;
 
         public Human()
         {
-            rock = new Gesture("Rock");
-            paper = new Gesture("Paper");
-            scissors = new Gesture("Scissors");
-            lizard = new Gesture("Lizard");
-            spock = new Gesture("Spock");
-            //Why doesn't this work? Seems like the syntax is right
+
         }
 
         //public void ChooseGesture()

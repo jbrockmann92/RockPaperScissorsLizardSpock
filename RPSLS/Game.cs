@@ -15,6 +15,13 @@ namespace RPSLS
 
         int playerOneScore;
         int playerTwoScore;
+        int playerInput;
+        Gesture rock;
+        Gesture paper;
+        Gesture scissors;
+        Gesture lizard;
+        Gesture spock;
+
 
         Player player = new Player();
 
@@ -22,11 +29,33 @@ namespace RPSLS
         {
             //Need to do both playerOne and playerTwo
             //Assigning values to each of the Gesture variables depending on which choice P1 makes
-            Gesture rock = new Gesture(3, 4, 2, 1, 5);
-            Gesture paper = new Gesture(2, 3, 4, 1, 5);
-            Gesture scissors = new Gesture(2, 4, 3, 5, 1);
-            Gesture lizard = new Gesture(4, 2, 5, 3, 1);
-            Gesture spock = new Gesture(2, 4, 1, 5, 3);
+            //I don't think this will be very clean. We'll see
+
+            Console.WriteLine("Would you like to play a one player or two player game? Press 1 for one player and 2 for two");
+            int oneOrTwoPlayer = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Press 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, and 4 for Spock");
+
+            if (playerInput == 0)
+            {
+                rock = new Gesture(3, 4, 2, 1, 5);
+            }
+            else if (playerInput == 1)
+            {
+               paper = new Gesture(2, 3, 4, 5, 1);
+            }
+            else if (playerInput == 2)
+            {
+                scissors = new Gesture(2, 4, 3, 5, 1);
+            }
+            else if (playerInput == 3)
+            {
+                lizard = new Gesture(4, 2, 5, 3, 1);
+            }
+            else if (playerInput == 3)
+            {
+                spock = new Gesture(2, 4, 1, 5, 3);
+            }
             
             while (playerTwoScore < 6)
             {
