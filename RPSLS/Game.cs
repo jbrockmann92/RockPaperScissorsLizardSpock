@@ -13,19 +13,15 @@ namespace RPSLS
         //Make sure to clear out the values after each round. While loop for the duration of the game. 'if' statements for the firstPlayer choices
         //This is where I want to worry about gestureChoice????
 
-        int playerOneScore = 0;
-        int playerTwoScore = 0;
-        int playerInput;
+        int playerOneScore;
+        int playerTwoScore;
+        int playerOneInput;
+        int playerTwoInput;
         int playerOneChoice;
         int playerTwoChoice;
-        Gesture rock;
-        Gesture paper;
-        Gesture scissors;
-        Gesture lizard;
-        Gesture spock;
+        Player playerOne;
+        Player playerTwo;
 
-
-        Player player = new Player();
 
         public void PlayGame()
         {
@@ -38,34 +34,25 @@ namespace RPSLS
 
             if (oneOrTwoPlayer == 1)
             {
-
+                playerOne = new Player();
+                playerTwo = new Computer();
+            }
+            else if (oneOrTwoPlayer == 2)
+            {
+                playerOne = new Player();
+                playerTwo = new Computer();
             }
 
-            while (playerTwoScore > 4)
-            {
-                while (playerOneScore > 4)
-                {
-                    Console.WriteLine("Press 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, and 4 for Spock");
-                    playerInput = int.Parse(Console.ReadLine());
+            playerOne.HumanOrComputer();
+            //something with the loop is being infinite around here. Need a generic player in which I can run the HumanOrComputer method?
+            //Where am I putting the input from HumanOrComputer?
 
-                    switch (playerInput)
-                    {
-                        case 0:
-                            rock = new Gesture(3, 4, 2, 1, 5);
-                            break;
-                        case 1:
-                            paper = new Gesture(2, 3, 4, 5, 1);
-                            break;
-                        case 2:
-                            scissors = new Gesture(2, 4, 3, 5, 1);
-                            break;
-                        case 3:
-                            lizard = new Gesture(4, 2, 5, 3, 1);
-                            break;
-                        default:
-                            spock = new Gesture(2, 4, 1, 5, 3);
-                            break;
-                    }
+            while (playerTwoScore < 4)
+            {
+                while (playerOneScore < 4)
+                {
+                    playerOne.ChooseGesture(1);
+                    playerTwo.ChooseGesture(4);
 
                     if (playerOneChoice > playerTwoChoice)
                     {
@@ -81,6 +68,7 @@ namespace RPSLS
                     else
                     {
                         Console.WriteLine("You tied");
+                        //infinite loop here
                     }
                 }
             }

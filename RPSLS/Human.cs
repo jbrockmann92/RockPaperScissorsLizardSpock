@@ -13,7 +13,8 @@ namespace RPSLS
         //I'll want a list of the 5 options in this class that will be assigned values ultimately in the Game class
         //Human and computer will inherit from the Player class
 
-        public List<Gesture> gestures = null;
+        public int playerInput;
+        public List<Gesture> gestures;
 
         public Human()
         {
@@ -27,15 +28,13 @@ namespace RPSLS
         //    //gesture.PlayerChoice(); -- I want this input so I can, in the Game class, assign the values to each of the variables in Gesture()
         //}
 
-        public void GestureChoice()
+        public override void ChooseGesture(int playerInput)
         {
-            Console.WriteLine("Which Gesture would you like to do?");
-            foreach (Gesture gesture in gestures)
-            {
-
-            }
+            Console.WriteLine("Press 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, and 4 for Spock");
+            this.playerInput = int.Parse(Console.ReadLine());
+            //May need to fix something here later. Seems like the this.playerInput may not be what I want. Figure out later.
+            base.ChooseGesture(playerInput);
         }
-
 
 
     }
