@@ -51,8 +51,8 @@ namespace RPSLS
             {
                 while (playerOneScore < 4)
                 {
-                    playerOne.ChooseGesture(1);
-                    playerTwo.ChooseGesture(4);
+                    playerOne.ChooseGesture(playerOneScore);
+                    playerTwo.ChooseGesture(playerTwoScore);
 
                     if (playerOneChoice > playerTwoChoice)
                     {
@@ -65,12 +65,15 @@ namespace RPSLS
                         playerTwoScore++;
                         Console.WriteLine("Player two scores a point");
                     }
-                    else
+                    else if (playerOneChoice == playerTwoChoice)
                     {
                         Console.WriteLine("You tied");
-                        //infinite loop here
+                        break;
+                        //infinite loop here. break is not fixing. Must be using it wrong.
                     }
+                break;
                 }
+            break;
             }
         }
 

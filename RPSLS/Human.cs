@@ -35,7 +35,5 @@ namespace RPSLS
             //May need to fix something here later. Seems like the this.playerInput may not be what I want. Figure out later.
             base.ChooseGesture(playerInput);
         }
-
-
     }
 }

@@ -23,6 +23,5 @@ namespace RPSLS
             Random randint = new Random();
             this.computerInput = randint.Next(4);
         }
-
     }
 }
