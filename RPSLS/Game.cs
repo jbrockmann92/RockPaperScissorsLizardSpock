@@ -15,6 +15,7 @@ namespace RPSLS
 
         int playerOneScore = 0;
         int playerTwoScore = 0;
+        int winningNumber;
         Player playerOne;
         Player playerTwo;
 
@@ -22,6 +23,7 @@ namespace RPSLS
         public int HumanOrComputer()
         {
             Console.WriteLine("Would you like to play a one player or two player game? Press 1 for one player and 2 for two");
+            //do a switch statement here to validate
             int oneOrTwoPlayer = int.Parse(Console.ReadLine());
             return oneOrTwoPlayer;
         }
@@ -40,10 +42,33 @@ namespace RPSLS
             }
         }
 
+        public void RoundsNumber()
+        {
+            //make odd only
+            Console.WriteLine("How many wins would you like to play to? You can play up to 7");
+            winningNumber = int.Parse(Console.ReadLine());
+        }
+
         //call in the main PlayGame method
 
         public void PlayGame()
         {
+            Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock! Let's go over the rules quickly and We'll get right into it");
+            Console.WriteLine("This game is a lot like Rock, Paper, Scissors, but it adds two more choices: Lizard and Spock");
+            Console.WriteLine("As usual, Rock beats Scissors, but loses to Paper; Paper beats Rock, but loses to Scissors; and Scissors beats Paper, but loses to Rock.");
+            Console.WriteLine("In this verison, Lizard beats Paper and Spock, but loses to Scissors and Rock,");
+            Console.WriteLine("while Spock beats Scissors and Rock, but loses to Paper and Lizard");
+            Console.WriteLine("");
+            Console.WriteLine("Or, to put it another way:");
+            Console.WriteLine("Paper and Spock >> Rock >> Scissors and Lizard");
+            Console.WriteLine("Scissors and Lizard >> Paper >> Rock and Spock");
+            Console.WriteLine("Rock and Spock >> Scissors >> Paper and Lizard");
+            Console.WriteLine("Scissors and Rock >> Lizard >> Paper and Spock");
+            Console.WriteLine("Paper and Lizard >> Spock >> Rock and Scissors");
+            Console.WriteLine("Everything to the left beats the middle choice, but everything to the right loses to it. Make sense?");
+            Console.ReadLine();
+            Console.Clear();
+
             //Need to do both playerOne and playerTwo
             //Assigning values to each of the Gesture variables depending on which choice P1 makes
             //I don't think this will be very clean. We'll see
@@ -53,13 +78,14 @@ namespace RPSLS
 
             //OneOrTwoPlayer(HumanOrComputer());
 
-
             //Clean up. Clear console after each turn. Print what both users chose before you print who wins the round.
 
-            while (playerOneScore < 3 && playerTwoScore < 3)
+            while (playerOneScore < winningNumber && playerTwoScore < winningNumber)
             {
                 string playerOneGesture = playerOne.ChooseGesture();
+                Console.Clear();
                 string playerTwoGesture = playerTwo.ChooseGesture();
+                Console.Clear();
                 if (playerOneGesture == playerTwoGesture)
                 {
                     Console.WriteLine("Draw! Try again");
@@ -130,6 +156,8 @@ namespace RPSLS
                         playerTwoScore++;
                     }
                 }
+                Console.WriteLine($"Player One's score is |{playerOneScore}|");
+                Console.WriteLine($"Player Two's score is |{playerTwoScore}|");
 
 
                 //playerOne.ChooseGesture();
