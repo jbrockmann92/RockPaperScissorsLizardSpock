@@ -21,12 +21,14 @@ namespace RPSLS
         int playerTwoChoice;
         Player playerOne;
         Player playerTwo;
+        Gesture gestures;
 
 
-        public int GetNumberPlayers()
+        public int HumanOrComputer()
         {
-            Console.WriteLine("Would you like to play with two players or against a computer?");
-            return int.Parse(Console.ReadLine());
+            Console.WriteLine("Would you like to play a one player or two player game? Press 1 for one player and 2 for two");
+            int oneOrTwoPlayer = int.Parse(Console.ReadLine());
+            return oneOrTwoPlayer;
         }
 
         public void OneOrTwoPlayer(int oneOrTwoPlayer)
@@ -54,28 +56,33 @@ namespace RPSLS
             //something with the loop is being infinite around here. Need a generic player in which I can run the HumanOrComputer method?
             //Where am I putting the input from HumanOrComputer?
 
-            OneOrTwoPlayer(GetNumberPlayers());
+            OneOrTwoPlayer(HumanOrComputer());
 
             while (playerTwoScore < 4 && playerOneScore < 4)
             {
-                playerOne.ChooseGesture(playerOne.ChooseInput());
-                playerTwo.ChooseGesture(playerTwo.ChooseInput());
+
                 
-                if (playerOneChoice > playerTwoChoice)
-                {
-                    playerOneScore++;
-                    Console.WriteLine("Player one scores a point");
-                }
-                else if (playerTwoChoice > playerOneChoice)
-                {
-                    playerTwoScore++;
-                    Console.WriteLine("Player two scores a point");
-                }
-                else if (playerOneChoice == playerTwoChoice)
-                {
-                    Console.WriteLine("You tied");
-                    //infinite loop here. break is not fixing. Must be using it wrong.
-                }
+                //playerOne.ChooseGesture();
+                //playerTwo.ChooseGesture();
+
+                ////playerOneChoice = playerOne.ChooseInput();
+                ////playerTwoChoice = playerTwo.ChooseInput();
+                
+                //if (3 > playerTwo.PlayerTwoGesture)
+                //{
+                //    playerOneScore++;
+                //    Console.WriteLine("Player one scores a point");
+                //}
+                //else if (playerTwoChoice > 3)
+                //{
+                //    playerTwoScore++;
+                //    Console.WriteLine("Player two scores a point");
+                //}
+                //else if (playerOneChoice == playerTwoChoice)
+                //{
+                //    Console.WriteLine("You draw");
+                //    //infinite loop here. break is not fixing. Must be using it wrong.
+                //}
             }
         }
 
