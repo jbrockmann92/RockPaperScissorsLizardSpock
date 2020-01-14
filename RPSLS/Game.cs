@@ -13,8 +13,8 @@ namespace RPSLS
         //Make sure to clear out the values after each round. While loop for the duration of the game. 'if' statements for the firstPlayer choices
         //This is where I want to worry about gestureChoice????
 
-        int playerOneScore;
-        int playerTwoScore;
+        int playerOneScore = 0;
+        int playerTwoScore = 0;
         int playerOneInput;
         int playerTwoInput;
         int playerOneChoice;
@@ -23,57 +23,59 @@ namespace RPSLS
         Player playerTwo;
 
 
+        public int GetNumberPlayers()
+        {
+            Console.WriteLine("Would you like to play with two players or against a computer?");
+            return int.Parse(Console.ReadLine());
+        }
+
+        public void OneOrTwoPlayer(int oneOrTwoPlayer)
+        {
+            if (oneOrTwoPlayer == 1)
+            {
+                playerOne = new Human();
+                playerTwo = new Computer();
+            }
+            else if (oneOrTwoPlayer == 2)
+            {
+                playerOne = new Human();
+                playerTwo = new Human();
+            }
+        }
+
+        //call in the main PlayGame method
+
         public void PlayGame()
         {
             //Need to do both playerOne and playerTwo
             //Assigning values to each of the Gesture variables depending on which choice P1 makes
             //I don't think this will be very clean. We'll see
 
-            Console.WriteLine("Would you like to play a one player or two player game? Press 1 for one player and 2 for two");
-            int oneOrTwoPlayer = int.Parse(Console.ReadLine());
-
-            if (oneOrTwoPlayer == 1)
-            {
-                playerOne = new Player();
-                playerTwo = new Computer();
-            }
-            else if (oneOrTwoPlayer == 2)
-            {
-                playerOne = new Player();
-                playerTwo = new Computer();
-            }
-
-            playerOne.HumanOrComputer();
             //something with the loop is being infinite around here. Need a generic player in which I can run the HumanOrComputer method?
             //Where am I putting the input from HumanOrComputer?
 
-            while (playerTwoScore < 4)
+            OneOrTwoPlayer(GetNumberPlayers());
+
+            while (playerTwoScore < 4 && playerOneScore < 4)
             {
-                while (playerOneScore < 4)
+                playerOne.ChooseGesture(playerOne.ChooseInput());
+                playerTwo.ChooseGesture(playerTwo.ChooseInput());
+                
+                if (playerOneChoice > playerTwoChoice)
                 {
-                    playerOne.ChooseGesture(playerOneScore);
-                    playerTwo.ChooseGesture(playerTwoScore);
-
-                    if (playerOneChoice > playerTwoChoice)
-                    {
-                        playerOneScore++;
-                        Console.WriteLine("Player one scores a point");
-
-                    }
-                    else if (playerTwoChoice > playerOneChoice)
-                    {
-                        playerTwoScore++;
-                        Console.WriteLine("Player two scores a point");
-                    }
-                    else if (playerOneChoice == playerTwoChoice)
-                    {
-                        Console.WriteLine("You tied");
-                        break;
-                        //infinite loop here. break is not fixing. Must be using it wrong.
-                    }
-                break;
+                    playerOneScore++;
+                    Console.WriteLine("Player one scores a point");
                 }
-            break;
+                else if (playerTwoChoice > playerOneChoice)
+                {
+                    playerTwoScore++;
+                    Console.WriteLine("Player two scores a point");
+                }
+                else if (playerOneChoice == playerTwoChoice)
+                {
+                    Console.WriteLine("You tied");
+                    //infinite loop here. break is not fixing. Must be using it wrong.
+                }
             }
         }
 

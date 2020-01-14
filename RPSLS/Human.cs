@@ -13,27 +13,54 @@ namespace RPSLS
         //I'll want a list of the 5 options in this class that will be assigned values ultimately in the Game class
         //Human and computer will inherit from the Player class
 
-        public int playerInput;
+        public int playerInput = 0;
         public List<Gesture> gestures;
+        Gesture rock;
+        Gesture paper;
+        Gesture scissors;
+        Gesture lizard;
+        Gesture spock;
+        int whichGesture;
 
         public Human()
         {
 
         }
 
-        //public void ChooseGesture()
-        //{
-        //    Console.WriteLine("Would you like to do 0) Rock, 1) Paper, 2) Scissors, 3) Lizard, or 4) Spock? Make your entry now");
-        //    whichGesture = int.Parse(Console.ReadLine());
-        //    //gesture.PlayerChoice(); -- I want this input so I can, in the Game class, assign the values to each of the variables in Gesture()
-        //}
-
         public override void ChooseGesture(int playerInput)
         {
-            Console.WriteLine("Press 0 for Rock, 1 for Paper, 2 for Scissors, 3 for Lizard, and 4 for Spock");
-            this.playerInput = int.Parse(Console.ReadLine());
-            //May need to fix something here later. Seems like the this.playerInput may not be what I want. Figure out later.
-            base.ChooseGesture(playerInput);
+            if (playerInput == 0)
+            {
+                switch (playerInput)
+                {
+                    case 1:
+                        rock = new Gesture(3, 4, 2, 1, 5);
+                        break;
+                    case 2:
+                        paper = new Gesture(2, 3, 4, 5, 1);
+                        break;
+                    case 3:
+                        scissors = new Gesture(2, 4, 3, 5, 1);
+                        break;
+                    case 4:
+                        lizard = new Gesture(4, 2, 5, 3, 1);
+                        break;
+                    case 5:
+                        spock = new Gesture(2, 4, 1, 5, 3);
+                        break;
+                    default:
+                        Console.WriteLine("Please enter 1-5");
+                        break;
+                }
+            }
+            else
+            {
+                Console.WriteLine("Please enter 1-5 for Rock, Paper, Scissors, Lizard, or Spock");
+                whichGesture = int.Parse(Console.ReadLine());
+            }
+            //reset player input to 0 after everything in this function, because that's how the function will test whether it's
+            //playerOne or playerTwo making their choice
+            playerInput = 0;
         }
     }
 }
