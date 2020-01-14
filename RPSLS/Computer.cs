@@ -22,7 +22,7 @@ namespace RPSLS
         public override string ChooseGesture()
         {
             Random randint = new Random();
-            computerRandInt = randint.Next(0, 6);
+            computerRandInt = randint.Next(0, 5);
             computerGesture = gestures[computerRandInt];
             return computerGesture;
         }

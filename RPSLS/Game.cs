@@ -54,9 +54,9 @@ namespace RPSLS
             //OneOrTwoPlayer(HumanOrComputer());
 
 
-            //Still need to get the computer to choose from the list. Isn't working right now
+            //Clean up. Clear console after each turn. Print what both users chose before you print who wins the round.
 
-            while (playerOneScore < 4 && playerTwoScore < 4)
+            while (playerOneScore < 3 && playerTwoScore < 3)
             {
                 string playerOneGesture = playerOne.ChooseGesture();
                 string playerTwoGesture = playerTwo.ChooseGesture();
@@ -154,6 +154,15 @@ namespace RPSLS
                 //    //infinite loop here. break is not fixing. Must be using it wrong.
                 //}
             }
+            if (playerOneScore >= 3)
+            {
+                Console.WriteLine("Player One wins!");
+            }
+            else if (playerTwoScore >= 3)
+            {
+                Console.WriteLine("Player Two wins!");
+            }
+            Console.ReadLine();
         }
 
     }

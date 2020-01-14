@@ -27,7 +27,7 @@ namespace RPSLS
 
         public override string ChooseGesture()
         {
-            Console.WriteLine("Please enter Rock, Paper, Scissors, Lizard or Spock");
+            Console.WriteLine($"Please enter {gestures[0]}, {gestures[1]}, {gestures[2]}, {gestures[3]}, or {gestures[4]}");
             string gestureChoice = Console.ReadLine().ToLower();
             switch (gestureChoice)
             {
