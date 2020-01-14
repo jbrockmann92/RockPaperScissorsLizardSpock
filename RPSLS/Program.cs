@@ -12,6 +12,7 @@ namespace RPSLS
         {
             Game game = new Game();
             game.OneOrTwoPlayer(game.HumanOrComputer());
+            game.RoundsNumber();
             game.PlayGame();
         }
     }

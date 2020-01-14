@@ -45,7 +45,7 @@ namespace RPSLS
         public void RoundsNumber()
         {
             //make odd only
-            Console.WriteLine("How many wins would you like to play to? You can play up to 7");
+            Console.WriteLine("How many points would you like to play to? You can play up to 7");
             winningNumber = int.Parse(Console.ReadLine());
         }
 
@@ -55,7 +55,8 @@ namespace RPSLS
         {
             Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock! Let's go over the rules quickly and We'll get right into it");
             Console.WriteLine("This game is a lot like Rock, Paper, Scissors, but it adds two more choices: Lizard and Spock");
-            Console.WriteLine("As usual, Rock beats Scissors, but loses to Paper; Paper beats Rock, but loses to Scissors; and Scissors beats Paper, but loses to Rock.");
+            Console.WriteLine("As usual, Rock beats Scissors, but loses to Paper; Paper beats Rock, but loses to Scissors; ");
+            Console.WriteLine("and Scissors beats Paper, but loses to Rock.");
             Console.WriteLine("In this verison, Lizard beats Paper and Spock, but loses to Scissors and Rock,");
             Console.WriteLine("while Spock beats Scissors and Rock, but loses to Paper and Lizard");
             Console.WriteLine("");
@@ -67,7 +68,6 @@ namespace RPSLS
             Console.WriteLine("Paper and Lizard >> Spock >> Rock and Scissors");
             Console.WriteLine("Everything to the left beats the middle choice, but everything to the right loses to it. Make sense?");
             Console.ReadLine();
-            Console.Clear();
 
             //Need to do both playerOne and playerTwo
             //Assigning values to each of the Gesture variables depending on which choice P1 makes
@@ -89,7 +89,6 @@ namespace RPSLS
                 if (playerOneGesture == playerTwoGesture)
                 {
                     Console.WriteLine("Draw! Try again");
-                    Console.ReadLine();
                 }
                 else if (playerOneGesture == "rock")
                 {
@@ -103,6 +102,7 @@ namespace RPSLS
                         Console.WriteLine("Player Two wins a point!");
                         playerTwoScore++;
                     }
+                    Console.WriteLine($"Player One chose rock, and Player Two chose {playerTwoGesture}");
                 }
                 else if (playerOneGesture == "paper")
                 {
@@ -116,6 +116,7 @@ namespace RPSLS
                         Console.WriteLine("Player Two wins a point!");
                         playerTwoScore++;
                     }
+                    Console.WriteLine($"Player One chose paper, and Player Two chose {playerTwoGesture}");
                 }
                 else if (playerOneGesture == "scissors")
                 {
@@ -129,6 +130,7 @@ namespace RPSLS
                         Console.WriteLine("Player Two wins a point!");
                         playerTwoScore++;
                     }
+                    Console.WriteLine($"Player One chose scissors, and Player Two chose {playerTwoGesture}");
                 }
                 else if (playerOneGesture == "lizard")
                 {
@@ -142,6 +144,7 @@ namespace RPSLS
                         Console.WriteLine("Player Two wins a point!");
                         playerTwoScore++;
                     }
+                    Console.WriteLine($"Player One chose lizard, and Player Two chose {playerTwoGesture}");
                 }
                 else if (playerOneGesture == "spock")
                 {
@@ -155,7 +158,9 @@ namespace RPSLS
                         Console.WriteLine("Player Two wins a point!");
                         playerTwoScore++;
                     }
+                    Console.WriteLine($"Player One chose spock, and Player Two chose {playerTwoGesture}");
                 }
+
                 Console.WriteLine($"Player One's score is |{playerOneScore}|");
                 Console.WriteLine($"Player Two's score is |{playerTwoScore}|");
 
@@ -182,11 +187,11 @@ namespace RPSLS
                 //    //infinite loop here. break is not fixing. Must be using it wrong.
                 //}
             }
-            if (playerOneScore >= 3)
+            if (playerOneScore >= winningNumber)
             {
                 Console.WriteLine("Player One wins!");
             }
-            else if (playerTwoScore >= 3)
+            else if (playerTwoScore >= winningNumber)
             {
                 Console.WriteLine("Player Two wins!");
             }
