@@ -56,7 +56,7 @@ namespace RPSLS
             //something with the loop is being infinite around here. Need a generic player in which I can run the HumanOrComputer method?
             //Where am I putting the input from HumanOrComputer?
 
-            OneOrTwoPlayer(HumanOrComputer());
+            //OneOrTwoPlayer(HumanOrComputer());
 
             while (playerTwoScore < 4 && playerOneScore < 4)
             {

@@ -14,10 +14,11 @@ namespace RPSLS
         //Human and computer will inherit from the Player class
 
         //public int playerInput = 0;
-        public List<Gesture> gestures;
-        public Gesture playerOneGesture;
-        public Gesture playerTwoGesture;
-        int whichGesture;
+        //public List<Gesture> gestures;
+        //public Gesture playerOneGesture;
+        //public Gesture playerTwoGesture;
+        //int whichGesture;
+        public string humanGesture;
 
         public Human()
         {
@@ -28,10 +29,7 @@ namespace RPSLS
         {
             Console.WriteLine("Please enter Rock, Paper, Scissors, Lizard or Spock");
             string playerGesture = Console.ReadLine();
-
-
-
-
+            humanGesture = playerGesture.ToLower();
 
 
             //Console.WriteLine("Please enter 1-5 for Rock, Paper, Scissors, Lizard, or Spock");

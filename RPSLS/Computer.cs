@@ -21,7 +21,7 @@ namespace RPSLS
         public override void ChooseGesture()
         {
             Random randint = new Random();
-            this.computerInput = randint.Next(1, 6);
+            computerInput = randint.Next(1, 6);
         }
     }
 }
