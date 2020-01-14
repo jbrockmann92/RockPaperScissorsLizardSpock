@@ -25,11 +25,34 @@ namespace RPSLS
 
         }
 
-        public override void ChooseGesture()
+        public override string ChooseGesture()
         {
             Console.WriteLine("Please enter Rock, Paper, Scissors, Lizard or Spock");
-            string playerGesture = Console.ReadLine();
-            humanGesture = playerGesture.ToLower();
+            string gestureChoice = Console.ReadLine().ToLower();
+            switch (gestureChoice)
+            {
+                case "rock":
+                    humanGesture = gestureChoice;
+                    break;
+                case "paper":
+                    humanGesture = gestureChoice;
+                    break;
+                case "scissors":
+                    humanGesture = gestureChoice;
+                    break;
+                case "lizard":
+                    humanGesture = gestureChoice;
+                    break;
+                case "spock":
+                    humanGesture = gestureChoice;
+                    break;
+                default:
+                    Console.WriteLine("Please enter one of the options above");
+                    break;
+            }
+            return humanGesture;
+
+
 
 
             //Console.WriteLine("Please enter 1-5 for Rock, Paper, Scissors, Lizard, or Spock");

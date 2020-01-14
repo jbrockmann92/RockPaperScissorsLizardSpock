@@ -11,17 +11,20 @@ namespace RPSLS
         //Need to figure out how to automate the same processes that the human player will do in the human class. Both inherit from Player class
         //Randomize the three options. Have something like playerGesture and that's what will be automated in this class, while Human gets to choose
         //Human and computer will inherit from the Player class
-        int computerInput;
+        int computerRandInt;
+        public string computerGesture;
 
         public Computer()
         {
 
         }
 
-        public override void ChooseGesture()
+        public override string ChooseGesture()
         {
             Random randint = new Random();
-            computerInput = randint.Next(1, 6);
+            computerRandInt = randint.Next(0, 6);
+            computerGesture = gestures[computerRandInt];
+            return computerGesture;
         }
     }
 }

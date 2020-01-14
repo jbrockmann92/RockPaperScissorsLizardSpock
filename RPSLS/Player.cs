@@ -11,13 +11,13 @@ namespace RPSLS
         //Need to figure out Human or Computer here, because Game will just have firstPlayer and secondPlayer. secondPlayer will be either human or computer
         //ints or strings? Bool?
 
-        public List<string> gestures = new List<string>() {"Rock","Paper", "Scissors", "Lizard", "Spock"};
+        public List<string> gestures = new List<string>() {"rock","paper", "scissors", "lizard", "spock"};
 
         public Player()
         {
 
         }
 
-        public abstract void ChooseGesture();
+        public abstract string ChooseGesture();
     }
 }

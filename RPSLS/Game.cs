@@ -15,13 +15,8 @@ namespace RPSLS
 
         int playerOneScore = 0;
         int playerTwoScore = 0;
-        int playerOneInput;
-        int playerTwoInput;
-        int playerOneChoice;
-        int playerTwoChoice;
         Player playerOne;
         Player playerTwo;
-        Gesture gestures;
 
 
         public int HumanOrComputer()
@@ -58,16 +53,91 @@ namespace RPSLS
 
             //OneOrTwoPlayer(HumanOrComputer());
 
-            while (playerTwoScore < 4 && playerOneScore < 4)
-            {
 
-                
+            //Still need to get the computer to choose from the list. Isn't working right now
+
+            while (playerOneScore < 4 && playerTwoScore < 4)
+            {
+                string playerOneGesture = playerOne.ChooseGesture();
+                string playerTwoGesture = playerTwo.ChooseGesture();
+                if (playerOneGesture == playerTwoGesture)
+                {
+                    Console.WriteLine("Draw! Try again");
+                    Console.ReadLine();
+                }
+                else if (playerOneGesture == "rock")
+                {
+                    if (playerTwoGesture == "scissors" || playerTwoGesture == "lizard")
+                    {
+                        Console.WriteLine("Player One wins a point!");
+                        playerOneScore++;
+                    }
+                    else if (playerTwoGesture == "paper" || playerTwoGesture == "spock")
+                    {
+                        Console.WriteLine("Player Two wins a point!");
+                        playerTwoScore++;
+                    }
+                }
+                else if (playerOneGesture == "paper")
+                {
+                    if (playerTwoGesture == "rock" || playerTwoGesture == "spock")
+                    {
+                        Console.WriteLine("Player One wins a point!");
+                        playerOneScore++;
+                    }
+                    else if (playerTwoGesture == "scissors" || playerTwoGesture == "lizard")
+                    {
+                        Console.WriteLine("Player Two wins a point!");
+                        playerTwoScore++;
+                    }
+                }
+                else if (playerOneGesture == "scissors")
+                {
+                    if (playerTwoGesture == "paper" || playerTwoGesture == "lizard")
+                    {
+                        Console.WriteLine("Player One wins a point!");
+                        playerOneScore++;
+                    }
+                    else if (playerTwoGesture == "rock" || playerTwoGesture == "spock")
+                    {
+                        Console.WriteLine("Player Two wins a point!");
+                        playerTwoScore++;
+                    }
+                }
+                else if (playerOneGesture == "lizard")
+                {
+                    if (playerTwoGesture == "paper" || playerTwoGesture == "spock")
+                    {
+                        Console.WriteLine("Player One wins a point!");
+                        playerOneScore++;
+                    }
+                    else if (playerTwoGesture == "scissors" || playerTwoGesture == "rock")
+                    {
+                        Console.WriteLine("Player Two wins a point!");
+                        playerTwoScore++;
+                    }
+                }
+                else if (playerOneGesture == "spock")
+                {
+                    if (playerTwoGesture == "paper" || playerTwoGesture == "lizard")
+                    {
+                        Console.WriteLine("Player One wins a point!");
+                        playerOneScore++;
+                    }
+                    else if (playerTwoGesture == "rock" || playerTwoGesture == "scissors")
+                    {
+                        Console.WriteLine("Player Two wins a point!");
+                        playerTwoScore++;
+                    }
+                }
+
+
                 //playerOne.ChooseGesture();
                 //playerTwo.ChooseGesture();
 
                 ////playerOneChoice = playerOne.ChooseInput();
                 ////playerTwoChoice = playerTwo.ChooseInput();
-                
+
                 //if (3 > playerTwo.PlayerTwoGesture)
                 //{
                 //    playerOneScore++;
