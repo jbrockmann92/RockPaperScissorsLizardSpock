@@ -12,6 +12,7 @@ namespace RPSLS
         //ints or strings? Bool?
 
         public List<string> gestures = new List<string>() {"rock","paper", "scissors", "lizard", "spock"};
+        public string name;
 
         public Player()
         {
@@ -19,5 +20,7 @@ namespace RPSLS
         }
 
         public abstract string ChooseGesture();
+
+        public abstract void GetName();
     }
 }

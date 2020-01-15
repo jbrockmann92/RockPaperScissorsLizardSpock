@@ -26,5 +26,10 @@ namespace RPSLS
             computerGesture = gestures[computerRandInt];
             return computerGesture;
         }
+
+        public override void GetName()
+        {
+            name = "Computer";
+        }
     }
 }

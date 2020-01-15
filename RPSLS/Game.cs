@@ -33,12 +33,16 @@ namespace RPSLS
             if (oneOrTwoPlayer == 1)
             {
                 playerOne = new Human();
+                playerOne.GetName();
                 playerTwo = new Computer();
+                playerTwo.GetName();
             }
             else if (oneOrTwoPlayer == 2)
             {
                 playerOne = new Human();
+                playerOne.GetName();
                 playerTwo = new Human();
+                playerTwo.GetName();
             }
         }
 
@@ -94,75 +98,75 @@ namespace RPSLS
                 {
                     if (playerTwoGesture == "scissors" || playerTwoGesture == "lizard")
                     {
-                        Console.WriteLine("Player One wins a point!");
+                        Console.WriteLine($"{playerOne.name} wins a point!");
                         playerOneScore++;
                     }
                     else if (playerTwoGesture == "paper" || playerTwoGesture == "spock")
                     {
-                        Console.WriteLine("Player Two wins a point!");
+                        Console.WriteLine($"{playerTwo.name} wins a point!");
                         playerTwoScore++;
                     }
-                    Console.WriteLine($"Player One chose rock, and Player Two chose {playerTwoGesture}");
+                    Console.WriteLine($"{playerOne.name} chose rock, and {playerTwo.name} chose {playerTwoGesture}");
                 }
                 else if (playerOneGesture == "paper")
                 {
                     if (playerTwoGesture == "rock" || playerTwoGesture == "spock")
                     {
-                        Console.WriteLine("Player One wins a point!");
+                        Console.WriteLine($"{playerOne.name} wins a point!");
                         playerOneScore++;
                     }
                     else if (playerTwoGesture == "scissors" || playerTwoGesture == "lizard")
                     {
-                        Console.WriteLine("Player Two wins a point!");
+                        Console.WriteLine($"{playerTwo.name} wins a point!");
                         playerTwoScore++;
                     }
-                    Console.WriteLine($"Player One chose paper, and Player Two chose {playerTwoGesture}");
+                    Console.WriteLine($"{playerOne.name} chose paper, and {playerTwo.name} chose {playerTwoGesture}");
                 }
                 else if (playerOneGesture == "scissors")
                 {
                     if (playerTwoGesture == "paper" || playerTwoGesture == "lizard")
                     {
-                        Console.WriteLine("Player One wins a point!");
+                        Console.WriteLine($"{playerOne.name} wins a point!");
                         playerOneScore++;
                     }
                     else if (playerTwoGesture == "rock" || playerTwoGesture == "spock")
                     {
-                        Console.WriteLine("Player Two wins a point!");
+                        Console.WriteLine($"{playerTwo.name} wins a point!");
                         playerTwoScore++;
                     }
-                    Console.WriteLine($"Player One chose scissors, and Player Two chose {playerTwoGesture}");
+                    Console.WriteLine($"{playerOne.name} chose scissors, and {playerTwo.name} chose {playerTwoGesture}");
                 }
                 else if (playerOneGesture == "lizard")
                 {
                     if (playerTwoGesture == "paper" || playerTwoGesture == "spock")
                     {
-                        Console.WriteLine("Player One wins a point!");
+                        Console.WriteLine($"{playerOne.name} wins a point!");
                         playerOneScore++;
                     }
                     else if (playerTwoGesture == "scissors" || playerTwoGesture == "rock")
                     {
-                        Console.WriteLine("Player Two wins a point!");
+                        Console.WriteLine($"{playerTwo.name} wins a point!");
                         playerTwoScore++;
                     }
-                    Console.WriteLine($"Player One chose lizard, and Player Two chose {playerTwoGesture}");
+                    Console.WriteLine($"{playerOne.name} chose lizard, and {playerTwo.name} chose {playerTwoGesture}");
                 }
                 else if (playerOneGesture == "spock")
                 {
                     if (playerTwoGesture == "paper" || playerTwoGesture == "lizard")
                     {
-                        Console.WriteLine("Player One wins a point!");
+                        Console.WriteLine($"{playerOne.name} wins a point!");
                         playerOneScore++;
                     }
                     else if (playerTwoGesture == "rock" || playerTwoGesture == "scissors")
                     {
-                        Console.WriteLine("Player Two wins a point!");
+                        Console.WriteLine($"{playerTwo.name} wins a point!");
                         playerTwoScore++;
                     }
-                    Console.WriteLine($"Player One chose spock, and Player Two chose {playerTwoGesture}");
+                    Console.WriteLine($"{playerOne.name} chose spock, and {playerTwo.name} chose {playerTwoGesture}");
                 }
 
-                Console.WriteLine($"Player One's score is |{playerOneScore}|");
-                Console.WriteLine($"Player Two's score is |{playerTwoScore}|");
+                Console.WriteLine($"{playerOne.name}'s score is |{playerOneScore}|");
+                Console.WriteLine($"{playerTwo.name}'s score is |{playerTwoScore}|");
 
 
                 //playerOne.ChooseGesture();
