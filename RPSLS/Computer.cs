@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Computer : Player
+    public class Computer : Player
     {
         int computerRandInt;
         public string computerGesture;
-
+        
         public Computer()
         {
 
         }
 
-        public override string ChooseGesture()
+        public override string ChooseGesture(string gestureChoice)
         {
             Random randint = new Random();
             computerRandInt = randint.Next(0, 5);

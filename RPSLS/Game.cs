@@ -66,14 +66,15 @@ namespace RPSLS
 
             while (playerOneScore < winningNumber && playerTwoScore < winningNumber)
             {
-                string playerOneGesture = playerOne.ChooseGesture();
+                string playerOneGesture = playerOne.ChooseGesture("");
                 Console.Clear();
-                string playerTwoGesture = playerTwo.ChooseGesture();
+                string playerTwoGesture = playerTwo.ChooseGesture("");
                 Console.Clear();
                 if (playerOneGesture == playerTwoGesture)
                 {
                     Console.WriteLine("Draw! Try again");
                 }
+
                 else if (playerOneGesture == "rock")
                 {
                     if (playerTwoGesture == "scissors" || playerTwoGesture == "lizard")

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSLS", "RPSLS\RPSLS.csproj", "{9E6682C2-6F0D-46D8-8150-EBCFDBC2E8AB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSLS Test", "RPSLS Test\RPSLS Test.csproj", "{045D3EBF-A5A3-4D1E-8AB4-EC81338615D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9E6682C2-6F0D-46D8-8150-EBCFDBC2E8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E6682C2-6F0D-46D8-8150-EBCFDBC2E8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E6682C2-6F0D-46D8-8150-EBCFDBC2E8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{045D3EBF-A5A3-4D1E-8AB4-EC81338615D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{045D3EBF-A5A3-4D1E-8AB4-EC81338615D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{045D3EBF-A5A3-4D1E-8AB4-EC81338615D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{045D3EBF-A5A3-4D1E-8AB4-EC81338615D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

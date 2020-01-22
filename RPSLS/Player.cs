@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    abstract class Player
+    public abstract class Player
     {
         public List<string> gestures = new List<string>() {"rock","paper", "scissors", "lizard", "spock"};
         public string name;
@@ -16,7 +16,7 @@ namespace RPSLS
 
         }
 
-        public abstract string ChooseGesture();
+        public abstract string ChooseGesture(string gestureChoice);
 
         public abstract void GetName();
     }
